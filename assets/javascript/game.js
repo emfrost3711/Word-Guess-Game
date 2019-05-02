@@ -2,8 +2,8 @@
     var wins = 0;
     var directionsText = document.getElementById("directions");
     var winsText = document.getElementById("wins");
-    var currentWord = document.getElementById("word")
-    var lettersGuessed = document.getElementById("userGuess")
+    var currentWord = document.getElementById("word");
+    var lettersGuessed = document.getElementById("userGuess");
     var badassLadies = [
         "jane austen", 
         "cleopatra",
