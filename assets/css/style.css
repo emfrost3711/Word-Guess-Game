@@ -5,17 +5,16 @@ body {
     font-size: 18px;
     line-height: 34px;
     color: #777777;
-    background: url("../images/stardust.png");
     margin: 0 auto;
     display: flex; 
     flex-direction: column; /* this helps it to stack things on top from top to bottom in the body itself */
-    min-height: 100vh; vh stands for viewport height; essentially it's divided into 100 stripes across any given size screen;
+    min-height: 100vh; /*vh stands for viewport height; essentially it's divided into 100 stripes across any given size screen;*/
 
 }
 
 .container {
     width: 100%;
     max-width: 960px;
-    margin: 0 auto;
+    margin: 100px, 250px, 100px;
     clear: both;
   }
