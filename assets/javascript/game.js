@@ -14,8 +14,11 @@
         "michelle obama",
         "oprah",
         "frida kahlo"];
-    var word = badassLadies[Math.floor(Math.random() * badassLadies.length)];
     var answerArray = [];
+    var word 
+
+    function baseValues () { 
+    word = badassLadies[Math.floor(Math.random() * badassLadies.length)];
     for (var i = 0; i < word.length; i++) {
         //if there is a space it puts a space in the answer array; if it's a letter it puts a _ in
       if (word[i]===" ") {
@@ -29,8 +32,9 @@
     var remainingGuesses = 10; 
     console.log(word)
     //need variables for "Press any key to get started!" (then that should disappear after the game starts)
+    }
 
-
+    baseValues(); 
     //game loop here
     // while (remainingLetters > 0) {
         //game code goes here
@@ -69,8 +73,17 @@
     //This is our first badass lady: Jane Austen. 
     document.onkeyup = function(event) {
         var userGuess = event.key.toLowerCase();
-        console.log(userGuess)
-        //go through word; if userguess is a letter in the word, place it in the appropriate slot; 
+        if(answerArray.includes (userGuess)) {
+            //check if the value at each index is equal to a certina indeax; you can do a for loop or a for each here. 
+            //loop through the answer array; inside of the for loop (or for each) check to see if the letter at each index with that; then fill it in
+          
+        }
+        
+
+
+
+        // 
+        //go through word; if userguess is a letter in the word, place it in the appropriate slot; use .includes first to see if it exists; if it does then use array indexOf()
         //check to see if array has any underscores
         //if there are no underscores, they win! increase wine count
         //if the guesses remaining is above 0 remove 1 from remaining guesses and log the guess on the page;
@@ -86,11 +99,10 @@
         // } else {
         //     document.write () //add the letter to letters guessed AND move the guesses remaining number down 1
         // }
+    
+
     }
 
 
-
-
-    //make a new function that incluees setting guesses, letters guessed values, all the base values, puts the dashes on the pages, sets number og tuesses pickes the word sets the letters they've guessed to a value
+    //make a new function that incluees setting guesses, letters guessed values, all the base values, puts the dashes on the pages, sets number of guesses picks the word sets the letters they've guessed to a value
     //make a reset function that you can call repeatedly;
-    
