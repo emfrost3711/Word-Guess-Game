@@ -4,8 +4,9 @@
     var losses = 0; 
     var directionsText = document.getElementById("directions");
     var winsText = document.getElementById("wins");
+    var lossesText = document.getElementById("losses");
     var currentWord = document.getElementById("word");
-    var lettersGuessed = document.getElementById("userGuess");
+    var lettersGuessed = []; 
     var losses = document.getElementById("losses"); 
     var badassLadies = [
         "jane austen", 
@@ -15,7 +16,8 @@
         "oprah",
         "frida kahlo"];
     var answerArray = [];
-    var word 
+    var word ;
+    var remainingGuesses = 10;
 
     function baseValues () { 
     word = badassLadies[Math.floor(Math.random() * badassLadies.length)];
@@ -25,50 +27,35 @@
         answerArray.push(" ");
       } 
       else {answerArray.push("_");}
-    }
+    } console.log(answerArray);
+    var visibleWord = answerArray.join(' ');
+    var individualWords = visibleWord.split(' '); 
+        console.log(individualWords);
       //puts the _ _ _ on the page in the answer array 
-    currentWord.textContent = answerArray.join(' ');
-        console.log(answerArray.length)
-    var remainingGuesses = 10; 
+    currentWord.innerText = visibleWord; 
+        console.log(answerArray.length);
+    remainingGuesses = 10; 
     console.log(word)
     //need variables for "Press any key to get started!" (then that should disappear after the game starts)
     }
 
     baseValues(); 
     //game loop here
-    // while (remainingLetters > 0) {
-        //game code goes here
-        //show the player their progress
-        //take input guess from the player
-        //update answerArray and remainingLetters for every correct guess
-    // }
+    if (remainingGuesses > 0) {
+    winsText.textContent = wins;
+    lossesText.textContent = losses;
 
-
-    //images to change when they get the answer right
-
-    //Computer picks a badass lady
-    //While the word has not been guessed {
     //     show the player their current Progress 
     //     get a guess from the player 
-
-    //     if the player wants to quite the game {
-    //         quit the game
-    //     }
-    //     else if the guess is not a single letter {
-    //         tell the player to pick a single letter
-    //     }
-    //     else {
+        //take input guess from the player
+        //update answerArray and remainingLetters for every correct guess
     //         if the guess is in the word {
     //             update the player's progress with the guess
-    //         }
-    //     }
-    // }
-
-    //if user guesses same letter >1 no change to number of guesses remaining
+    //  
+    // if userGuess is wrong then push userGuess to lettersGuessed array AND print the array in the span with the id of lettersGuessed
+    //if user guesses same letter >1 no change to number of guesses remaining**** don't fret over this
 
     //then var text to appear at top with the answer
-    
-    //could further complicate it by offering an alert "hint" if they get down to only 3 letter guesses left;
 
     //This is our first badass lady: Jane Austen. 
     document.onkeyup = function(event) {
@@ -78,31 +65,5 @@
             //loop through the answer array; inside of the for loop (or for each) check to see if the letter at each index with that; then fill it in
           
         }
-        
-
-
-
-        // 
-        //go through word; if userguess is a letter in the word, place it in the appropriate slot; use .includes first to see if it exists; if it does then use array indexOf()
-        //check to see if array has any underscores
-        //if there are no underscores, they win! increase wine count
-        //if the guesses remaining is above 0 remove 1 from remaining guesses and log the guess on the page;
-        // if guesses = 0, player loses
-        // when player loses, alert "You lose"; increase loss count; then reset it. 
-            //clear out lettersholldingthing; choose a new string from the badassLadies array; reset answers array; reset guesses to 10;
-
-
-
-        // if (userGuess === "j") //insert "j" into " _ _ _ _  _ _ _ _ _ _ "
-        // {
-            
-        // } else {
-        //     document.write () //add the letter to letters guessed AND move the guesses remaining number down 1
-        // }
-    
-
     }
-
-
-    //make a new function that incluees setting guesses, letters guessed values, all the base values, puts the dashes on the pages, sets number of guesses picks the word sets the letters they've guessed to a value
-    //make a reset function that you can call repeatedly;
+    }
